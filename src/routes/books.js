@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const loggerOne = require("../middlevares/loggerOne");
+
 const {
   getBooks,
   getBook,
@@ -8,7 +8,7 @@ const {
   deleteBook,
 } = require("../controllers/books");
 
-router.use(loggerOne);
+
 router.get("/books", getBooks);
 router.get("/books/:book_id", getBook);
 router.post("/books", createBook);

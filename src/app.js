@@ -6,7 +6,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/users");
 const booksRouter = require("./routes/books");
-const loggerOne = require("./middlevares/loggerOne");
+const logger = require("./middlevares/logger");
 
 dotenv.config();
 const {
@@ -26,7 +26,7 @@ const helloWorld = (request, response) => {
   response.send("Hello, world");
 };
 app.use(cors());
-app.use(loggerOne);
+app.use(logger);
 app.use(bodyParser.json());
 
 app.get("/", helloWorld);
